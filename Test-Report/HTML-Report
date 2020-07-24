@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+.cucumber-react section {
+  margin-bottom: 1em;
+}
+.cucumber-react .status-passed {
+  color: #2CB14A;
+}
+.cucumber-react .status-skipped {
+  color: #00A0CC;
+}
+.cucumber-react .status-pending {
+  color: #FFAD33;
+}
+.cucumber-react .status-undefined {
+  color: #FFAD33;
+}
+.cucumber-react .status-ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .status-failed {
+  color: #BB0000;
+}
+.cucumber-react .status-unknown {
+  color: #B6BECB;
+}
+.cucumber-react .data-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .data-table th {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .data-table td {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .data-table td__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .data-table td__step {
+  flex-grow: 1;
+}
+.cucumber-react .examples-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .examples-table th {
+  padding: 0.3em;
+}
+.cucumber-react .examples-table th + th {
+  border: 1px solid #4B5662;
+}
+.cucumber-react .examples-table td {
+  padding: 0.3em;
+}
+.cucumber-react .examples-table td + td {
+  border: 1px solid #4B5662;
+}
+.cucumber-react .examples-table td + td__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .examples-table td + td__step {
+  flex-grow: 1;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .indent {
+  margin-left: 1em;
+}
+.cucumber-react .keyword {
+  font-weight: bold;
+}
+.cucumber-react .step {
+  padding: 0.1em;
+}
+.cucumber-react .step-text {
+  font-weight: normal;
+}
+.cucumber-react .step-param {
+  font-weight: normal;
+}
+.cucumber-react .step-container {
+  display: flex;
+}
+.cucumber-react .step-container__step {
+  flex-grow: 1;
+}
+.cucumber-react .text_status_icon_container {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .error-message {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .tag-list {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-report-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  border: 1px solid #4B5662;
+  border-right: 0;
+  border-bottom: 0;
+  font-size: 80%;
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-report-header > * {
+  flex-grow: 1;
+  border-right: 1px solid #4B5662;
+  border-bottom: 1px solid #4B5662;
+  padding: 1em;
+}
+.cucumber-react .cucumber-report-header .cucumber-status-filter {
+  padding-bottom: 1em;
+}
+.cucumber-react .cucumber-report-header .cucumber-status-filter th {
+  display: table-row;
+}
+.cucumber-react .cucumber-report-header .cucumber-status-filter td {
+  padding: 3px 15px;
+}
+.cucumber-react .cucumber-report-header .cucumber-ci-information ul {
+  list-style-type: none;
+}
+.cucumber-react .cucumber-report-header .cucumber-search-bar input {
+  padding: 0.4em;
+  border-radius: 0;
+  width: 80%;
+}
+.cucumber-react .cucumber-report-header .cucumber-search-bar button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-react .cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-react .attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .attachment .attachment-icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .attachment-image {
+  margin-top: 1em;
+}
+.cucumber-react .highlight mark {
+  background-color: yellow;
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"12.2.0","implementation":{"name":"cucumber-jvm","version":"6.2.2"},"runtime":{"name":"Oracle Corporation","version":"1.8.0_241"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1595590968","nanos":642000000}}},{"source":{"uri":"file:///D:/Java/Neon/com.policytray.test/Feature_files/home.feature","data":"Feature: Testing on home page\n\n  Background: \n    Given User on Policytray homepage\n\n  @navbar\n  Scenario: Testing links on navigation bar\n    When User clicking the links in navigation bar\n      | Maturity Calculator        |\n      | Surrender Value Calculator |\n      | PA Policy                  |\n      | Spot Your Agent            |\n      | Apply Online               |\n    And Click the blog link\n    Then Close the browser\n\n  @widget\n  Scenario: Testing links on widgets\n    When User clicking the links in Widget that opening in same window\n      | Home                  |\n      | Amulya Jeevan         |\n      | Get Vehicle Details   |\n      | Apply policy          |\n      | Refer Friends         |\n      | Withdrawn Plans       |\n      | About Us              |\n      | Contact Us            |\n      | New Jeevan Anand      |\n      | Hiring                |\n      | New Endowment Plan    |\n      | Single Endowment      |\n      | Jeevan Pragati        |\n      | Micro Bachat          |\n      | Invest 4G             |\n      | New Money Back Policy |\n      | New BIMA BACHAT       |\n      | Jeevan Shiromani      |\n      | Bima Shree            |\n      | Jeevan Arogya         |\n      | iSelect Term Plan     |\n      | Anmol Jeevan          |\n      | New Child Money Back  |\n      | Jeevan Tarun          |\n      | New Jeevan Nidhi      |\n      | Jeevan Akshay-VI      |\n      | Religare Secure PA    |\n      | Employee              |\n    And User clicking the links in Widget that opening in new window\n      | CoverNest             |\n      | HDFC Cancer Care Plan |\n      | HDFC Term Plan        |\n    Then Close the browser\n\n  @container\n  Scenario: Testing image links in homepage\n    When User clicks personal accident policy image\n    And User clicks LIC premium and maturity calculator image\n    Then User clicks Life insurance Surrender value calculator\n    And User clicks Life insurance loan calculator\n    Then User clicks Life insurance calculator image\n    And User clicks Agent locator image\n    And User clicks Life insurance blog image\n    Then User clicks App download link\n    Then Close the browser\n\n  @sharinngContainer\n  Scenario: Testing Sharing container links\n    When User click Facebook sharing\n    And User clicks Twitter sharing\n    And User clicks LinkedIN sharing\n    Then Close the browser\n\n  @socialmediaIcon\n  Scenario: Testing on Social media Icons\n    When User clicks Facebook Icon\n    And User clicks Twitter Icon\n    And User clicks Youtube Icon\n    Then Close the browser\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///D:/Java/Neon/com.policytray.test/Feature_files/home.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Testing on home page","children":[{"background":{"location":{"line":3,"column":3},"keyword":"Background","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"User on Policytray homepage","id":"0ddd1526-ac38-4a85-ad60-99a8e88e160a"}],"id":"c779d27d-bf65-4152-8ee4-2c8305c8e2ac"}},{"scenario":{"location":{"line":7,"column":3},"tags":[{"location":{"line":6,"column":3},"name":"@navbar","id":"33e6aae4-1ef7-4f0a-942d-0e4866137139"}],"keyword":"Scenario","name":"Testing links on navigation bar","steps":[{"location":{"line":8,"column":5},"keyword":"When ","text":"User clicking the links in navigation bar","dataTable":{"location":{"line":9,"column":7},"rows":[{"location":{"line":9,"column":7},"cells":[{"location":{"line":9,"column":9},"value":"Maturity Calculator"}],"id":"9ea1de9e-f2fc-465c-b53a-f0ca336c5a90"},{"location":{"line":10,"column":7},"cells":[{"location":{"line":10,"column":9},"value":"Surrender Value Calculator"}],"id":"c62b6c27-4b8e-42aa-b126-9797c48c548e"},{"location":{"line":11,"column":7},"cells":[{"location":{"line":11,"column":9},"value":"PA Policy"}],"id":"d0a8da6b-de9e-46c2-89d2-89b27860d648"},{"location":{"line":12,"column":7},"cells":[{"location":{"line":12,"column":9},"value":"Spot Your Agent"}],"id":"4c1f812d-bced-4cc5-8545-9570900cc79c"},{"location":{"line":13,"column":7},"cells":[{"location":{"line":13,"column":9},"value":"Apply Online"}],"id":"cbafb77d-2069-47b1-8b2f-94bd11699e22"}]},"id":"860ea707-fa12-43a2-a6cf-849c08b615c0"},{"location":{"line":14,"column":5},"keyword":"And ","text":"Click the blog link","id":"06054e51-4767-4602-89f0-8bb5a80c410d"},{"location":{"line":15,"column":5},"keyword":"Then ","text":"Close the browser","id":"4364bf74-aa5f-4ba2-8608-67ea4c098e12"}],"id":"cde2e8e1-a0e9-4481-ac81-976c0e6ee7af"}},{"scenario":{"location":{"line":18,"column":3},"tags":[{"location":{"line":17,"column":3},"name":"@widget","id":"87b9188b-f155-4466-836a-50cce5b8eb06"}],"keyword":"Scenario","name":"Testing links on widgets","steps":[{"location":{"line":19,"column":5},"keyword":"When ","text":"User clicking the links in Widget that opening in same window","dataTable":{"location":{"line":20,"column":7},"rows":[{"location":{"line":20,"column":7},"cells":[{"location":{"line":20,"column":9},"value":"Home"}],"id":"b2a76bcd-b73e-47b4-afda-ad682ec8224d"},{"location":{"line":21,"column":7},"cells":[{"location":{"line":21,"column":9},"value":"Amulya Jeevan"}],"id":"263585f2-1e92-4dc8-bd85-f77cffbdff6e"},{"location":{"line":22,"column":7},"cells":[{"location":{"line":22,"column":9},"value":"Get Vehicle Details"}],"id":"f6b7496f-f441-42c9-b629-b87d7a2c9cb8"},{"location":{"line":23,"column":7},"cells":[{"location":{"line":23,"column":9},"value":"Apply policy"}],"id":"add0a58e-9ea7-4319-9ee1-2837d38b5814"},{"location":{"line":24,"column":7},"cells":[{"location":{"line":24,"column":9},"value":"Refer Friends"}],"id":"9843ddf4-cd8a-4e13-b261-21070d944ee4"},{"location":{"line":25,"column":7},"cells":[{"location":{"line":25,"column":9},"value":"Withdrawn Plans"}],"id":"08a1d9c1-faca-4f56-807b-7c2aff18c8c8"},{"location":{"line":26,"column":7},"cells":[{"location":{"line":26,"column":9},"value":"About Us"}],"id":"c7370877-9333-43f4-846e-49172da9340b"},{"location":{"line":27,"column":7},"cells":[{"location":{"line":27,"column":9},"value":"Contact Us"}],"id":"b4f45076-0f32-49d3-ab25-693c1797c02c"},{"location":{"line":28,"column":7},"cells":[{"location":{"line":28,"column":9},"value":"New Jeevan Anand"}],"id":"003d6433-9381-4108-a879-f2cb4c6b918e"},{"location":{"line":29,"column":7},"cells":[{"location":{"line":29,"column":9},"value":"Hiring"}],"id":"91d7483e-fc2f-4201-a5ac-f21800066fba"},{"location":{"line":30,"column":7},"cells":[{"location":{"line":30,"column":9},"value":"New Endowment Plan"}],"id":"fd5d740f-4795-40bb-b434-7635ab7f41da"},{"location":{"line":31,"column":7},"cells":[{"location":{"line":31,"column":9},"value":"Single Endowment"}],"id":"bae68105-c327-4cda-ae88-3e5db745640a"},{"location":{"line":32,"column":7},"cells":[{"location":{"line":32,"column":9},"value":"Jeevan Pragati"}],"id":"81142274-735d-4907-84bb-ee27c67151aa"},{"location":{"line":33,"column":7},"cells":[{"location":{"line":33,"column":9},"value":"Micro Bachat"}],"id":"8ed53c3e-67c9-4d08-8380-69f50db809b2"},{"location":{"line":34,"column":7},"cells":[{"location":{"line":34,"column":9},"value":"Invest 4G"}],"id":"205a3e51-c8c0-4b74-93a7-de13668721f4"},{"location":{"line":35,"column":7},"cells":[{"location":{"line":35,"column":9},"value":"New Money Back Policy"}],"id":"998e0fa1-5445-40e8-bea8-84e343a4bbf0"},{"location":{"line":36,"column":7},"cells":[{"location":{"line":36,"column":9},"value":"New BIMA BACHAT"}],"id":"5a7fd71e-d42c-4802-a736-4526a5105206"},{"location":{"line":37,"column":7},"cells":[{"location":{"line":37,"column":9},"value":"Jeevan Shiromani"}],"id":"1f47faec-3975-47cc-928f-9d2e3acea10b"},{"location":{"line":38,"column":7},"cells":[{"location":{"line":38,"column":9},"value":"Bima Shree"}],"id":"387a6981-fae4-4104-a2f5-687d2e6dd409"},{"location":{"line":39,"column":7},"cells":[{"location":{"line":39,"column":9},"value":"Jeevan Arogya"}],"id":"4a374d6e-327d-45e9-a28c-47822f9bdb31"},{"location":{"line":40,"column":7},"cells":[{"location":{"line":40,"column":9},"value":"iSelect Term Plan"}],"id":"80b4109f-ab96-4b7e-b0f8-c1046f039297"},{"location":{"line":41,"column":7},"cells":[{"location":{"line":41,"column":9},"value":"Anmol Jeevan"}],"id":"71321c7c-9dd3-43be-9ca1-59411d5f3561"},{"location":{"line":42,"column":7},"cells":[{"location":{"line":42,"column":9},"value":"New Child Money Back"}],"id":"6fee37c2-24fe-4cfe-b038-9a028b2957f8"},{"location":{"line":43,"column":7},"cells":[{"location":{"line":43,"column":9},"value":"Jeevan Tarun"}],"id":"7ef43baa-a7d9-49de-addb-dd5feb026e17"},{"location":{"line":44,"column":7},"cells":[{"location":{"line":44,"column":9},"value":"New Jeevan Nidhi"}],"id":"a88f2977-386c-408c-b95e-af8159db0b0f"},{"location":{"line":45,"column":7},"cells":[{"location":{"line":45,"column":9},"value":"Jeevan Akshay-VI"}],"id":"d9f8ddbd-4f4d-4632-8807-d1b84da1ff46"},{"location":{"line":46,"column":7},"cells":[{"location":{"line":46,"column":9},"value":"Religare Secure PA"}],"id":"598b7c9c-2a2a-477b-ab19-851a89de4ac2"},{"location":{"line":47,"column":7},"cells":[{"location":{"line":47,"column":9},"value":"Employee"}],"id":"9777a836-0d05-474b-94d1-5a032bd704b7"}]},"id":"30b99eeb-2d6e-483a-8908-9d64a26ac4d5"},{"location":{"line":48,"column":5},"keyword":"And ","text":"User clicking the links in Widget that opening in new window","dataTable":{"location":{"line":49,"column":7},"rows":[{"location":{"line":49,"column":7},"cells":[{"location":{"line":49,"column":9},"value":"CoverNest"}],"id":"93dd8f6b-c292-4b17-bec5-7b60fcab5abb"},{"location":{"line":50,"column":7},"cells":[{"location":{"line":50,"column":9},"value":"HDFC Cancer Care Plan"}],"id":"c82abd0e-0eee-4433-b970-a1fdf7eb73eb"},{"location":{"line":51,"column":7},"cells":[{"location":{"line":51,"column":9},"value":"HDFC Term Plan"}],"id":"f649435e-e4ef-4725-8d3f-566b55ea9735"}]},"id":"064014a6-95b5-4ecd-9f5c-838da766b1a0"},{"location":{"line":52,"column":5},"keyword":"Then ","text":"Close the browser","id":"51ac445c-5b78-4d93-bcb2-dad2af5ead4e"}],"id":"b9d7c41c-5394-4fd0-bae1-2da85872f1e0"}},{"scenario":{"location":{"line":55,"column":3},"tags":[{"location":{"line":54,"column":3},"name":"@container","id":"ce101811-8ff7-4da5-a09b-28cbda4aa7a3"}],"keyword":"Scenario","name":"Testing image links in homepage","steps":[{"location":{"line":56,"column":5},"keyword":"When ","text":"User clicks personal accident policy image","id":"f9b3533d-f0bd-4ad4-88e7-730eb358b592"},{"location":{"line":57,"column":5},"keyword":"And ","text":"User clicks LIC premium and maturity calculator image","id":"50bf2c12-b01c-4b7d-9ab9-7e4151f0cd57"},{"location":{"line":58,"column":5},"keyword":"Then ","text":"User clicks Life insurance Surrender value calculator","id":"0d6f8262-4e44-4a20-a2c0-0d6d9be7100d"},{"location":{"line":59,"column":5},"keyword":"And ","text":"User clicks Life insurance loan calculator","id":"0e02c098-e73e-419b-80c6-00db2ec78223"},{"location":{"line":60,"column":5},"keyword":"Then ","text":"User clicks Life insurance calculator image","id":"a8d83ea2-7ccb-45c6-925f-fdc780981bb6"},{"location":{"line":61,"column":5},"keyword":"And ","text":"User clicks Agent locator image","id":"bc9a3194-75d5-45e3-b512-2bab17f5724c"},{"location":{"line":62,"column":5},"keyword":"And ","text":"User clicks Life insurance blog image","id":"72b768df-1f98-48fe-8cda-f4b10e17ced9"},{"location":{"line":63,"column":5},"keyword":"Then ","text":"User clicks App download link","id":"e813564f-417c-449f-847a-c8721b608a4b"},{"location":{"line":64,"column":5},"keyword":"Then ","text":"Close the browser","id":"786942d9-5220-4921-a104-da0118ba5a13"}],"id":"47c667f7-49b8-4769-96c3-dd2fae05ba2c"}},{"scenario":{"location":{"line":67,"column":3},"tags":[{"location":{"line":66,"column":3},"name":"@sharinngContainer","id":"0eda1386-4255-4023-b387-cc1cc9d11a18"}],"keyword":"Scenario","name":"Testing Sharing container links","steps":[{"location":{"line":68,"column":5},"keyword":"When ","text":"User click Facebook sharing","id":"c2b6b1fd-b86a-4654-b37d-0dc9e8de6ae2"},{"location":{"line":69,"column":5},"keyword":"And ","text":"User clicks Twitter sharing","id":"66fe8acc-a55a-46d2-9c05-6a90617ec58d"},{"location":{"line":70,"column":5},"keyword":"And ","text":"User clicks LinkedIN sharing","id":"8916cd35-c70f-4168-96f9-ff7f5cc45869"},{"location":{"line":71,"column":5},"keyword":"Then ","text":"Close the browser","id":"a63d89a9-9679-40c6-ab33-bcf4833d71e0"}],"id":"9bf453e4-3985-4417-9b18-67ba51a75cf7"}},{"scenario":{"location":{"line":74,"column":3},"tags":[{"location":{"line":73,"column":3},"name":"@socialmediaIcon","id":"a83c035f-c021-4fb6-9342-bfe13154c25c"}],"keyword":"Scenario","name":"Testing on Social media Icons","steps":[{"location":{"line":75,"column":5},"keyword":"When ","text":"User clicks Facebook Icon","id":"b478be8b-c30c-4c3c-8641-144700ede119"},{"location":{"line":76,"column":5},"keyword":"And ","text":"User clicks Twitter Icon","id":"28f7b4fc-0785-48fb-b1b9-faa6f7bdb2ca"},{"location":{"line":77,"column":5},"keyword":"And ","text":"User clicks Youtube Icon","id":"5d7d04a5-36eb-4a7a-8ec3-6df0792ae955"},{"location":{"line":78,"column":5},"keyword":"Then ","text":"Close the browser","id":"b716ec19-1533-458b-9224-104335f95de2"}],"id":"44046bc1-a9c7-4638-ab93-088172ef8b4d"}}]}}},{"pickle":{"id":"9fba420c-7805-4f15-851c-ab3852085129","uri":"file:///D:/Java/Neon/com.policytray.test/Feature_files/home.feature","name":"Testing links on navigation bar","language":"en","steps":[{"text":"User on Policytray homepage","id":"57b9986c-2771-4794-acf3-6565050b0d94","astNodeIds":["0ddd1526-ac38-4a85-ad60-99a8e88e160a"]},{"text":"User clicking the links in navigation bar","argument":{"dataTable":{"rows":[{"cells":[{"value":"Maturity Calculator"}]},{"cells":[{"value":"Surrender Value Calculator"}]},{"cells":[{"value":"PA Policy"}]},{"cells":[{"value":"Spot Your Agent"}]},{"cells":[{"value":"Apply Online"}]}]}},"id":"1eaa58de-bc9e-484b-bcd4-f58b54106fe9","astNodeIds":["860ea707-fa12-43a2-a6cf-849c08b615c0"]},{"text":"Click the blog link","id":"ef6dd55d-1e67-4aca-92fd-eb9fe99c452d","astNodeIds":["06054e51-4767-4602-89f0-8bb5a80c410d"]},{"text":"Close the browser","id":"cb498daa-64ec-4e4f-8a8f-5c4cb0ada6f2","astNodeIds":["4364bf74-aa5f-4ba2-8608-67ea4c098e12"]}],"tags":[{"name":"@navbar","astNodeId":"33e6aae4-1ef7-4f0a-942d-0e4866137139"}],"astNodeIds":["cde2e8e1-a0e9-4481-ac81-976c0e6ee7af"]}},{"pickle":{"id":"257146c6-6fe7-4088-81c5-5ab1e624b70d","uri":"file:///D:/Java/Neon/com.policytray.test/Feature_files/home.feature","name":"Testing links on widgets","language":"en","steps":[{"text":"User on Policytray homepage","id":"526237dc-3d63-43fb-aba4-25b0e766fcea","astNodeIds":["0ddd1526-ac38-4a85-ad60-99a8e88e160a"]},{"text":"User clicking the links in Widget that opening in same window","argument":{"dataTable":{"rows":[{"cells":[{"value":"Home"}]},{"cells":[{"value":"Amulya Jeevan"}]},{"cells":[{"value":"Get Vehicle Details"}]},{"cells":[{"value":"Apply policy"}]},{"cells":[{"value":"Refer Friends"}]},{"cells":[{"value":"Withdrawn Plans"}]},{"cells":[{"value":"About Us"}]},{"cells":[{"value":"Contact Us"}]},{"cells":[{"value":"New Jeevan Anand"}]},{"cells":[{"value":"Hiring"}]},{"cells":[{"value":"New Endowment Plan"}]},{"cells":[{"value":"Single Endowment"}]},{"cells":[{"value":"Jeevan Pragati"}]},{"cells":[{"value":"Micro Bachat"}]},{"cells":[{"value":"Invest 4G"}]},{"cells":[{"value":"New Money Back Policy"}]},{"cells":[{"value":"New BIMA BACHAT"}]},{"cells":[{"value":"Jeevan Shiromani"}]},{"cells":[{"value":"Bima Shree"}]},{"cells":[{"value":"Jeevan Arogya"}]},{"cells":[{"value":"iSelect Term Plan"}]},{"cells":[{"value":"Anmol Jeevan"}]},{"cells":[{"value":"New Child Money Back"}]},{"cells":[{"value":"Jeevan Tarun"}]},{"cells":[{"value":"New Jeevan Nidhi"}]},{"cells":[{"value":"Jeevan Akshay-VI"}]},{"cells":[{"value":"Religare Secure PA"}]},{"cells":[{"value":"Employee"}]}]}},"id":"f1a2db41-a36f-4939-9334-bdbc022e4063","astNodeIds":["30b99eeb-2d6e-483a-8908-9d64a26ac4d5"]},{"text":"User clicking the links in Widget that opening in new window","argument":{"dataTable":{"rows":[{"cells":[{"value":"CoverNest"}]},{"cells":[{"value":"HDFC Cancer Care Plan"}]},{"cells":[{"value":"HDFC Term Plan"}]}]}},"id":"e9d20b09-123a-48b0-a074-f78d23317a90","astNodeIds":["064014a6-95b5-4ecd-9f5c-838da766b1a0"]},{"text":"Close the browser","id":"87c743c1-ae03-4e29-aba6-e52df8c717d5","astNodeIds":["51ac445c-5b78-4d93-bcb2-dad2af5ead4e"]}],"tags":[{"name":"@widget","astNodeId":"87b9188b-f155-4466-836a-50cce5b8eb06"}],"astNodeIds":["b9d7c41c-5394-4fd0-bae1-2da85872f1e0"]}},{"pickle":{"id":"3c449675-e4e7-47d5-b459-6d39cc232d83","uri":"file:///D:/Java/Neon/com.policytray.test/Feature_files/home.feature","name":"Testing image links in homepage","language":"en","steps":[{"text":"User on Policytray homepage","id":"9885c4e2-bece-4cf0-828d-264e144d89df","astNodeIds":["0ddd1526-ac38-4a85-ad60-99a8e88e160a"]},{"text":"User clicks personal accident policy image","id":"b2a261eb-9d57-421c-bb7a-b8f2290527c1","astNodeIds":["f9b3533d-f0bd-4ad4-88e7-730eb358b592"]},{"text":"User clicks LIC premium and maturity calculator image","id":"3dc4c1e1-e8c7-4da7-8f9d-6d4c12901969","astNodeIds":["50bf2c12-b01c-4b7d-9ab9-7e4151f0cd57"]},{"text":"User clicks Life insurance Surrender value calculator","id":"3c30d1dc-f347-4d62-a69a-5d63137310d3","astNodeIds":["0d6f8262-4e44-4a20-a2c0-0d6d9be7100d"]},{"text":"User clicks Life insurance loan calculator","id":"1424d768-9444-405a-992f-b51b8ffed193","astNodeIds":["0e02c098-e73e-419b-80c6-00db2ec78223"]},{"text":"User clicks Life insurance calculator image","id":"da8f89cd-7a17-40ef-b20b-63195c17e36c","astNodeIds":["a8d83ea2-7ccb-45c6-925f-fdc780981bb6"]},{"text":"User clicks Agent locator image","id":"79aefc00-e0b3-4813-ad13-8fc5f939fcba","astNodeIds":["bc9a3194-75d5-45e3-b512-2bab17f5724c"]},{"text":"User clicks Life insurance blog image","id":"1e2624c4-dbf5-4232-bd30-5b98e2130e0b","astNodeIds":["72b768df-1f98-48fe-8cda-f4b10e17ced9"]},{"text":"User clicks App download link","id":"ee149c76-744f-408a-b8a2-a33d628605eb","astNodeIds":["e813564f-417c-449f-847a-c8721b608a4b"]},{"text":"Close the browser","id":"a2f6c78a-1214-4fd9-aad8-ef104c3e6282","astNodeIds":["786942d9-5220-4921-a104-da0118ba5a13"]}],"tags":[{"name":"@container","astNodeId":"ce101811-8ff7-4da5-a09b-28cbda4aa7a3"}],"astNodeIds":["47c667f7-49b8-4769-96c3-dd2fae05ba2c"]}},{"pickle":{"id":"6cb32f60-05c9-4a69-bf88-4da7baea19ad","uri":"file:///D:/Java/Neon/com.policytray.test/Feature_files/home.feature","name":"Testing Sharing container links","language":"en","steps":[{"text":"User on Policytray homepage","id":"4e75a5d1-7a29-4264-9113-1a5279a94c0c","astNodeIds":["0ddd1526-ac38-4a85-ad60-99a8e88e160a"]},{"text":"User click Facebook sharing","id":"9ca690ed-3ee8-40fe-9312-5cdd9f0996e4","astNodeIds":["c2b6b1fd-b86a-4654-b37d-0dc9e8de6ae2"]},{"text":"User clicks Twitter sharing","id":"b6ecd3d4-0d2c-40c6-bc47-d257fc12984c","astNodeIds":["66fe8acc-a55a-46d2-9c05-6a90617ec58d"]},{"text":"User clicks LinkedIN sharing","id":"269618b9-7c7e-4e37-9028-86e67eee224f","astNodeIds":["8916cd35-c70f-4168-96f9-ff7f5cc45869"]},{"text":"Close the
